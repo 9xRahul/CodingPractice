@@ -25,5 +25,5 @@ class Solution {
 
 void main() {
   Solution sol = Solution();
-  print(sol.canJump([2, 3, 1, 1, 4]));
+  print(sol.canJump([2, 3, 1, 1, 4,3]));
 }
