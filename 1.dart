@@ -1,28 +1,14 @@
 void main() {
-  List<int> arr = [10, 10, 11, 12, 10, 10];
-  List<int> arr2 = [10, 11, 12, 13];
+  List<int> arr = [10, 11, 12, 11, 10];
 
-  bool isSublist = false;
+  Map<int, int> seen = {};
 
-  for (int i = 0; i <= arr2.length; i++) {
-    bool match = true;
-    for (int j = 0; j < arr2.length; j++) {
-      print("${i + j}  $j");
-      if (arr[i + j] != arr2[j]) {
-        match = false;
-        print(" not matched${i + j}  $j");
-        break;
-      }
-    }
-    if (match) {
-      isSublist = true;
+  for (int i = 0; i < arr.length; i++) {
+    if (seen.containsKey(arr[i])) {
+      print(arr[i]);
       break;
+    } else {
+      seen[arr[i]] = 1;
     }
-  }
-
-  if (isSublist) {
-    print("Sublist");
-  } else {
-    print("Not a Sublist");
   }
 }
