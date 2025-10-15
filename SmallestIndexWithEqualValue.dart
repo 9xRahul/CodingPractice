@@ -17,5 +17,5 @@ class Solution {
 
 void main() {
   Solution sol = Solution();
-  print(sol.smallestEqual([2, 3, 1, 1, 4, 3]));
+  print(sol.smallestEqual([2, 3, 1, 1, 3, 3]));
 }
