@@ -26,13 +26,11 @@ class Solution {
       minCount = count['n']!;
     }
 
-
-
     return minCount;
   }
 }
 
 void main() {
   Solution sol = Solution();
-  print(sol.maxNumberOfBalloons("bbb"));
+  print(sol.maxNumberOfBalloons("bbwwwaloonbldhhdbaloonl"));
 }
