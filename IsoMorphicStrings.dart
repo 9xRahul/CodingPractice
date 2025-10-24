@@ -2,27 +2,31 @@ class Solution {
   bool isIsomorphic(String s, String t) {
     if (s.length != t.length) return false;
 
-    Map<String, String> mapST = {};
-    Map<String, String> mapTS = {};
+    List<String> sTemp = s.split('');
+    List<String> tTemp = t.split('');
 
-    for (int i = 0; i < s.length; i++) {
-      String a = s[i];
-      String b = t[i];
+    List<int> sPattern = [];
+    List<int> tPattern = [];
 
-      if (mapST.containsKey(a) && mapST[a] != b) return false;
-      if (mapTS.containsKey(b) && mapTS[b] != a) return false;
-
-      mapST[a] = b;
-      mapTS[b] = a;
+    for (int i = 0; i < sTemp.length; i++) {
+      sPattern.add(sTemp.indexOf(sTemp[i]));
+      tPattern.add(tTemp.indexOf(tTemp[i]));
     }
 
-    return true;
+    print("sPattern: $sPattern");
+    print("tPattern: $tPattern");
+
+    // Join the pattern lists as strings and compare
+    String sT = sPattern.join(',');
+    String tT = tPattern.join(',');
+
+    print("After join: sT = $sT, tT = $tT");
+
+    return sT == tT;
   }
 }
 
 void main() {
   Solution sol = Solution();
-  print(sol.isIsomorphic("add", "egg")); // ✅ true
-  print(sol.isIsomorphic("foo", "bar")); // false
-  print(sol.isIsomorphic("paper", "title")); // ✅ true
+  print(sol.isIsomorphic("fow", "bwa"));
 }
