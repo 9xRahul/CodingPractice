@@ -23,5 +23,5 @@ class Solution {
 
 void main() {
   Solution sol = Solution();
-  print(sol.toHex(152463));
+  print(sol.toHex(-125));
 }
